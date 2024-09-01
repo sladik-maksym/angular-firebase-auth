@@ -1,0 +1,32 @@
+:host {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  width: 48px;
+  background-color: var(--dark-gunmetal-color);
+  transition: width 0.8s ease;
+  overflow: hidden;
+}
+
+.sidebar-collapsed {
+  width: 386px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+  padding: 16px;
+  overflow: auto;
+}

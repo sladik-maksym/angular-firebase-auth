@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.activeButton {
+  background-color: var(--base-selective-yellow-color);
+}

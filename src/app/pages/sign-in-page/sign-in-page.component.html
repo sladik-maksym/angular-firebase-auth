@@ -1,0 +1,45 @@
+<form class="form-wrapper" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <div class="title-wrapper">
+    <span class="title">Log in</span>
+
+    <div class="link-wrapper">
+      <span class="subtitle">New user?</span>
+
+      <a class="link" routerLink="/auth/sign-up">Sign up</a>
+    </div>
+  </div>
+
+  <div class="fields-wrapper">
+    <label class="field-wrapper">
+      <span class="label" [ngClass]="{ 'label-error': !!emailError }">
+        Email
+      </span>
+
+      <input class="input" [ngClass]="{ 'input-error': !!emailError }" type="text" formControlName="email"
+        placeholder="example@domain.com">
+
+      @if(!!emailError) {
+      <span class="error-message">{{ emailError }}</span>
+      }
+    </label>
+
+    <label class="field-wrapper">
+      <span class="label" [ngClass]="{ 'label-error': !!passwordError }">
+        Password
+      </span>
+
+      <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="text" formControlName="password"
+        placeholder="Password">
+
+      @if(!!passwordError) {
+      <span class="error-message">{{ passwordError }}</span>
+      }
+    </label>
+  </div>
+
+  @if(errorMessage) {
+  <span class="error-message">{{ errorMessage }}</span>
+  }
+
+  <button class="button button-color" type="submit" [disabled]="isLoading">Log in</button>
+</form>

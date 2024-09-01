@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+
+.wrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  @include typography-body-medium;
+
+  .pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    @include typography-caption-1-medium;
+  }
+}

@@ -1,0 +1,108 @@
+@import "fonts.scss";
+@import "typography.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --base-white-color: #ffffff;
+  --base-cod-gray-color: #1c1c1c;
+  --base-tundora-color: #4a4a4a;
+  --base-selective-yellow-color: #ffb800;
+  --base-alto-color: #d9d9d9;
+  --base-dove-gray-color: #6d6d6d;
+  --base-silver-chalice-color: #aeaeae;
+  --majorelle-blue-color: #6946f4;
+  --gainsboro-color: #d8dde3;
+  --arsenic-color: #39434d;
+  --cadet-blue-crayola-color: #a0adba;
+  --bright-gray-color: #ebeff2;
+  --dark-electric-blue-color: #5f6c79;
+  --coralred-color: #ff3636;
+  --lavender-gray-color: #c3cad2;
+  --cool-gray-color: #8896a4;
+  --kelly-green-color: #52c41a;
+  --dark-gunmetal-color: #1e2227;
+}
+
+[theme="light"] {
+  --calc-bg: var(--base-tundora-color);
+  --calc-btn-clear-and-control-bg: var(--base-alto-color);
+  --calc-btn-number-and-decimal-bg: var(--base-alto-color);
+}
+
+[theme="dark"] {
+  --calc-bg: var(--base-cod-gray-color);
+  --calc-btn-clear-and-control-bg: var(--base-silver-chalice-color);
+  --calc-btn-number-and-decimal-bg: var(--base-dove-gray-color);
+}
+
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+
+  .label {
+    @include typography-caption-1-medium;
+    color: var(--arsenic-color);
+  }
+
+  .label-error {
+    color: var(--coralred-color);
+  }
+
+  .input {
+    border: 1px solid var(--gainsboro-color);
+    border-radius: 8px;
+    height: 40px;
+    padding: 0 16px;
+    color: var(--arsenic-color);
+    @include typography-body-normal;
+
+    &::placeholder {
+      color: var(--cadet-blue-crayola-color);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--majorelle-blue-color);
+    }
+  }
+
+  .input-error {
+    border: 1px solid var(--coralred-color);
+
+    &:focus-visible {
+      outline: 1px solid var(--coralred-color);
+    }
+  }
+}
+
+.error-message {
+  @include typography-caption-1-normal;
+  color: var(--coralred-color);
+}
+
+.link {
+  @include typography-body-medium;
+  text-decoration: none;
+  color: var(--majorelle-blue-color);
+}
+
+.button {
+  @include typography-body-medium;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  cursor: pointer;
+  height: 40px;
+  width: 100%;
+
+  &:disabled {
+    background-color: var(--bright-gray-color) !important;
+    color: var(--dark-electric-blue-color) !important;
+  }
+}

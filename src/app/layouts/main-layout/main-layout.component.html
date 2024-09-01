@@ -1,0 +1,11 @@
+<div class="sidebar" [ngClass]="{ 'sidebar-collapsed': collapsed }">
+  <app-sidebar [collapsed]="collapsed" (toggle)="collapsed = !collapsed"></app-sidebar>
+</div>
+
+<header class="header">
+  <app-header></app-header>
+</header>
+
+<main class="main">
+  <router-outlet></router-outlet>
+</main>

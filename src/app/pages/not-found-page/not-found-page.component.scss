@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+
+:host {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title {
+  @include typography-heading-1-medium;
+  color: var(--arsenic-color);
+}
