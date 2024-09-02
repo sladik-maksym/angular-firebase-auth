@@ -39,7 +39,7 @@
   <label class="field-wrapper">
     <span class="label" [ngClass]="{ 'label-error': !!passwordError }">Password</span>
 
-    <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="Password" placeholder="Password"
+    <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="password" placeholder="Password"
       formControlName="password">
 
     @if(!!passwordError) {
@@ -53,7 +53,7 @@
   <label class="field-wrapper">
     <span class="label" [ngClass]="{ 'label-error': !!repeatPasswordError }">Repeat password</span>
 
-    <input class="input" [ngClass]="{ 'input-error': !!repeatPasswordError }" type="Password" placeholder="Password"
+    <input class="input" [ngClass]="{ 'input-error': !!repeatPasswordError }" type="password" placeholder="Password"
       formControlName="repeatPassword">
 
     @if(!!repeatPasswordError) {
