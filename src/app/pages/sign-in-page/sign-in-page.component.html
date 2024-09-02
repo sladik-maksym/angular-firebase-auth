@@ -28,7 +28,7 @@
         Password
       </span>
 
-      <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="text" formControlName="password"
+      <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="password" formControlName="password"
         placeholder="Password">
 
       @if(!!passwordError) {
