@@ -1,0 +1,44 @@
+<div class="progress-bar-wrapper">
+  <div class="progress-line progress-line-active"></div>
+
+  <div class="progress-line"
+    [ngClass]="{ 'progress-line-inactive': currentStep === 1, 'progress-line-active': currentStep === 2 }"></div>
+</div>
+
+<form class="form-wrapper" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <div class="form-title-wrapper">
+    <span class="step-count">Step {{ currentStep }} of 2</span>
+
+    <div class="form-link-wrapper">
+      <span class="title">Sign up</span>
+
+      <div class="link-wrapper">
+        <span class="subtitle">Already have an account?</span>
+
+        <a class="link" routerLink="/auth/sign-in">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  @if(currentStep === 1) {
+  <app-first-step [formGroupUserDetails]="signUpForm.controls.userDetails" />
+
+  <button class="button button-color" type="button" (click)="setNextStep()">Next</button>
+  } @else {
+  <app-second-step [formGroupOrganizationDetails]="signUpForm.controls.organizationDetails" />
+
+  @if(errorMessage) {
+  <span class="error-message">{{ errorMessage }}</span>
+  }
+
+  <div class="buttons-wrapper">
+    <button class="button button-back-color" type="button" (click)="setPrevStep()" [disabled]="isLoading">
+      Back
+    </button>
+
+    <button class="button button-color" type="submit" [disabled]="isLoading">
+      Sign up
+    </button>
+  </div>
+  }
+</form>

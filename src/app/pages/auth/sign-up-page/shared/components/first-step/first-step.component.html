@@ -1,0 +1,64 @@
+<div class="fields-wrapper" [formGroup]="formGroupUserDetails">
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!emailError }">
+      Email
+    </span>
+
+    <input class="input" [ngClass]="{ 'input-error': !!emailError }" type="text" formControlName="email"
+      placeholder="example@domain.com">
+
+    @if(!!emailError) {
+    <span class="error-message">{{ emailError }}</span>
+    }
+  </label>
+
+  <div class="fields-name-wrapper">
+    <label class="field-wrapper">
+      <span class="label" [ngClass]="{ 'label-error': !!firstNameError }">First name</span>
+
+      <input class="input" [ngClass]="{ 'input-error': !!firstNameError }" type="text" placeholder="First name"
+        formControlName="firstName">
+
+      @if(!!firstNameError) {
+      <span class="error-message">{{ firstNameError }}</span>
+      }
+    </label>
+
+    <label class="field-wrapper">
+      <span class="label" [ngClass]="{ 'label-error': !!lastNameError }">Last name</span>
+
+      <input class="input" [ngClass]="{ 'input-error': !!lastNameError }" type="text" placeholder="Last name"
+        formControlName="lastName">
+
+      @if(!!lastNameError) {
+      <span class="error-message">{{ lastNameError }}</span>
+      }
+    </label>
+  </div>
+
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!passwordError }">Password</span>
+
+    <input class="input" [ngClass]="{ 'input-error': !!passwordError }" type="Password" placeholder="Password"
+      formControlName="password">
+
+    @if(!!passwordError) {
+    <div class="password-requirements-wrapper">
+      <app-password-requirements [errors]="formGroupUserDetails.controls.password.errors"></app-password-requirements>
+    </div>
+    }
+  </label>
+
+  @if(repeatPasswordFieldVisible){
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!repeatPasswordError }">Repeat password</span>
+
+    <input class="input" [ngClass]="{ 'input-error': !!repeatPasswordError }" type="Password" placeholder="Password"
+      formControlName="repeatPassword">
+
+    @if(!!repeatPasswordError) {
+    <span class="error-message">{{ repeatPasswordError }}</span>
+    }
+  </label>
+  }
+</div>

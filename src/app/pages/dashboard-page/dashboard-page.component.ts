@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { CalculatorComponent } from '../../components/calculator/calculator.component';
-import { ThemeSwitcherComponent } from '../../components/theme-switcher/theme-switcher.component';
+import { ThemeSwitcherComponent } from './shared/components/theme-switcher/theme-switcher.component';
+import { CalculatorComponent } from './shared/components/calculator/calculator.component';
+ 
 
 @Component({
   selector: 'app-dashboard-page',

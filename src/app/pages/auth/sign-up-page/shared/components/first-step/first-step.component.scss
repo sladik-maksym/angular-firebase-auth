@@ -1,0 +1,14 @@
+.fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .fields-name-wrapper {
+    display: flex;
+    gap: 16px;
+  }
+
+  .password-requirements-wrapper {
+    padding-top: 16px;
+  }
+}

@@ -1,0 +1,10 @@
+<span>Change Theme: </span>
+<div>
+  @for(button of buttons; track button.title) {
+
+  <button appButtonHoverEffect="0.5" appDefaultButtonHoverEffect="0.7" (click)="button.click(button.title)"
+    [ngClass]="button.ngClass()">
+    {{ button.title | uppercase }}
+  </button>
+  }
+</div>

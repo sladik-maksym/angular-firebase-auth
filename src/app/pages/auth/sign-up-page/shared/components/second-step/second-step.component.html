@@ -1,0 +1,43 @@
+<div class="fields-wrapper" [formGroup]="formGroupOrganizationDetails">
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!accountTypeError }">Account type</span>
+
+    <select class="input" [ngClass]="{ 'input-error': !!accountTypeError }" formControlName="accountType">
+      <option value="" disabled selected>Account type</option>
+      <option value="organization">Organization</option>
+      <option value="user">User</option>
+    </select>
+
+
+    @if(!!accountTypeError) {
+    <span class="error-message">{{ accountTypeError }}</span>
+    }
+  </label>
+
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!organizationNameError }">Organization name</span>
+
+    <input class="input" [ngClass]="{ 'input-error': !!organizationNameError }" type="text"
+      placeholder="Organization name" formControlName="organizationName">
+
+
+    @if(!!organizationNameError) {
+    <span class="error-message">{{ organizationNameError }}</span>
+    }
+  </label>
+
+  <label class="field-wrapper">
+    <span class="label" [ngClass]="{ 'label-error': !!iotProviderError }">IoT provider</span>
+
+    <select class="input" [ngClass]="{ 'input-error': !!iotProviderError }" formControlName="iotProvider">
+      <option value="" disabled selected>IoT provider</option>
+      <option value="azure">AZURE</option>
+      <option value="sap">SAP</option>
+      <option value="aws">AWS</option>
+    </select>
+
+    @if(!!iotProviderError) {
+    <span class="error-message">{{ iotProviderError }}</span>
+    }
+  </label>
+</div>
